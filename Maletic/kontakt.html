@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css" integrity="sha384-CfCrinSRH2IR6a4e6fy2q6ioOX7O6Mtm1L9vRvFZ1trBncWmMePhzvafv7oIcWiW" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+#form{
+    margin-left: 35%;
+}
+</style>
+<body>
+<ul class="nav">
+ <li class="nav-item">
+<a class="nav-link" href="pocetna.html">Pocetna</a>
+ </li>
+  <li class="nav-item">
+<a class="nav-link" href="onama.html">O nama</a>
+ </li>
+  <li class="nav-item">
+<a class="nav-link" href="galerija.html">Galerija</a>
+ </li>
+  <li class="nav-item">
+<a class="nav-link" href="kontakt.html">Kontakt</a>
+ </li>
+</ul><br><br>
+
+<form id="form">
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><br><br>
+  <label for="poruka">Poruka:</label><br>
+   <textarea rows="4" cols="50" id="poruka" name="poruka"></textarea><br><br>
+  <button onclick="posalji()">Submit</button>
+</form>
+<script>
+function posalji(){
+    // 1. OBAVEZNO: Spreči osvežavanje stranice (browser default behavior)
+    event.preventDefault();
+
+    // 2. SKLONI zagrade kod .value (to nije funkcija nego svojstvo)
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var poruka = document.getElementById("poruka").value;
+
+if (username === "" || email === "" || poruka === "") {
+  alert("Popunite sva polja!");
+}
+else{
+    console.log("Korisnik:", username);
+    console.log("Email:", email);
+    console.log("Poruka:", poruka);
+    alert("Poruka uspesno poslata!");
+}
+}
+</script>
+</body>
+</html>
